@@ -1,18 +1,17 @@
 //Imports
 const express = require("express")
 const path = require('path')
-const bodyParser = require('body-parser')
 const cors = require('cors')
-const dotenv = require('dotenv')
+require('dotenv').config()
 
-//Routes
+//Route Imports
 const todoRoutes = require('./routes/todos')
 
 //Configuring...
 const port = process.env.PORT || 4000
 const app = express();
 app.use(cors())
-app.use(bodyParser.json())
+app.use(express.json())
 
 //Route Registration
 app.use('/todos', todoRoutes)
