@@ -5,7 +5,7 @@ const cors = require('cors')
 require('dotenv').config()
 
 //Route Imports
-const todoRoutes = require('./routes/todos')
+const sosRoutes = require('./routes/soss')
 
 //Configuring...
 const port = process.env.PORT || 4000
@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 //Route Registration
-app.use('/todos', todoRoutes)
+app.use('/sos', sosRoutes)
 
 //Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
